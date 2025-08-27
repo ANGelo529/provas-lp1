@@ -1,0 +1,127 @@
+Pular para o conteúdo principal
+Google Sala de Aula
+Sala de Aula
+LPI - Linguagem de programação I
+Técnico em Informática | Prof. Odair e Prof. Herbert
+Início
+Agenda
+Minhas inscrições
+Pendentes
+P
+Projeto Algoritmo X
+Projeto de ensino para Programação Competitiva | Prof. Odair
+R
+Robótica - IFPR Cascavel
+L
+LPI - Linguagem de programação I
+Técnico em Informática | Prof. Odair e Prof. Herbert
+1
+1º Informática
+Q
+Química I - INF - 2025
+Técnico em Informática
+M
+Matemática I - Informática
+1
+1º Informática - Língua Portuguesa
+L
+Língua Estrangeira Moderna - Inglês I - TINIF1A
+E
+Espanhol INF
+H
+HISTÓRIA I - 1o INFORMÁTICA
+1o INFORMÁTICA
+1
+1AINF - Geografia
+2
+1
+1º inform. FÍSICA I
+B
+Biologia I - Téc. em Informática
+A
+ARTES I - 1º INFORMÁTICA 2025
+I
+INFO - Fundamentos de Informática 2025
+Médio
+F
+Filosofia I
+Informática
+Turmas arquivadas
+Configurações
+LP1 - 1º Avaliação - 3º Bimestre (19/08)LP1 - 1º Avaliação - 3º Bimestre (19/08)
+LP1 - 1º Avaliação - 3º Bimestre (19/08)
+Herbert Rausch Fernandes
+•
+31 de jul. (editado: 19 de ago.)
+Data de entrega: 19 de ago., 15:20
+Data: 19/08/2025 - Terça-feira às 13:30
+Conteúdo:
+Raciocínio Lógico
+Tipos de dados
+Operadores e expressões
+Métodos e parâmetros
+Entrada e saída de dados
+Comandos condicionais e seleção
+Estruturas de repetição
+Estruturas de repetição aninhadas (encadeadas)
+Trazer uma folha A4 manuscrita com todas as informações que você achar necessária para desenvolver a prova.
+Comentários da turma
+Seus trabalhos
+Entregue
+
+angeloMiguel_1329_CaraCoroa.java
+Java
+
+angeloMiguel_1547_Adivinha.java
+Java
+
+angeloMiguel_9999_Blackjack.java
+Java
+Comentários particulares
+import java.util.Scanner;
+
+public class angeloMiguel_1329_CaraCoroa {
+    final static Scanner LER = new Scanner(System.in);
+
+    public static int lerInt() {
+        return LER.nextInt();
+    }
+
+
+    public static void main(String[] args) {
+        int qtdVezesJogadas = 0;
+        int vitoriasMary = 0;
+        int vitoriasJohn = 0;
+        int valorCaraCoroa = 0;
+        // casos infinitos com while (true) percebe isso na entrada dizendo varios casos
+        // de testes
+        while (true) {
+            // qtd de vezes que vai pedir as jogadas deles
+            qtdVezesJogadas = lerInt();
+            //caso não foi jogado acaba o código
+            if(qtdVezesJogadas == 0){
+                break;
+            }
+
+            // resete na quantidade de vitórias para ser um valor por loop
+
+            vitoriasJohn = 0;
+            vitoriasMary = 0;
+
+            // loop de recebimento do valor da moeda e verificação de vitória
+            for (int i = 0; i < qtdVezesJogadas; i++) {
+                valorCaraCoroa = lerInt();
+                // verificação de vitória
+                if (valorCaraCoroa > 0) {
+                    vitoriasJohn++;
+                } else {
+                    vitoriasMary++;
+                }
+            }
+
+            System.out.printf("Mary won %d times and John won %d times\n", vitoriasMary, vitoriasJohn);
+        }
+    }
+}
+angeloMiguel_1329_CaraCoroa.java
+Exibindo angeloMiguel_1329_CaraCoroa.java…
