@@ -1,0 +1,78 @@
+
+import java.util.Scanner;
+
+public class angeloMiguel_9999_Blackjack {
+
+    final static Scanner LER = new Scanner(System.in);
+
+    public static int lerInt() {
+        return LER.nextInt();
+    }
+
+    public static int verJogadasOgaiht(int qtdDadosJogados) {
+        int valorDados = 0;
+        int somaOgaiht = 0;
+        for (int j = 0; j < qtdDadosJogados; j++) {
+            valorDados = lerInt();
+
+            somaOgaiht += valorDados;
+
+        }
+        return somaOgaiht;
+    }
+
+    public static int verJogadasTrebreh(int qtdDadosJogados) {
+        int valorDados = 0;
+        int somaTrebreh = 0;
+        for (int j = 0; j < qtdDadosJogados; j++) {
+            valorDados = lerInt();
+
+            somaTrebreh += valorDados;
+        }
+        return somaTrebreh;
+    }
+
+    public static void main(String[] args) {
+        int nRodadas = lerInt();
+        int qtdDadosJogados = 0;
+        int somaOgaiht = 0;
+        int somaTrebreh = 0;
+        int vitoriasOgaiht = 0;
+        int vitoriasTrebreh = 0;
+        int empate = 0;
+        String jogador = null;
+
+        for (int i = 0; i < nRodadas; i++) {
+            jogador = null;
+            jogador = LER.next();
+            qtdDadosJogados = lerInt();
+
+            somaOgaiht = verJogadasOgaiht(qtdDadosJogados);
+
+            jogador = LER.next();
+            qtdDadosJogados = lerInt();
+
+            somaTrebreh = verJogadasTrebreh(qtdDadosJogados);
+
+            if (somaOgaiht == somaTrebreh || Math.abs(vitoriasOgaiht - 21) == Math.abs(vitoriasTrebreh - 21)) {
+                empate++;
+            } else if ((Math.abs(somaOgaiht - 21) <= Math.abs(vitoriasTrebreh - 21) || somaTrebreh == 21)
+                    && somaTrebreh <= 21) {
+                vitoriasTrebreh++;
+            } else if ((Math.abs(somaOgaiht - 21) >= Math.abs(vitoriasTrebreh - 21) || somaOgaiht == 21)
+                    && somaOgaiht <= 21) {
+                vitoriasOgaiht++;
+            }
+        }
+
+        if (vitoriasOgaiht > vitoriasTrebreh) {
+            System.out.printf("O vencedor é o Ogaiht.\n");
+        } else {
+            System.out.printf("O vencedor é o Trebreh.\n");
+        }
+
+        System.out.printf("Ogaith venceu %d rodada(s).\n", vitoriasOgaiht);
+        System.out.printf("Trebreh venceu %d rodada(s).\n", vitoriasTrebreh);
+        System.out.printf("empataram %d rodada(s).\n", empate);
+    }
+}
