@@ -1,0 +1,41 @@
+
+import java.util.Scanner;
+
+public class angeloMiguel_1547_Adivinha {
+    final static Scanner LER = new Scanner(System.in);
+
+    public static int lerInt() {
+        return LER.nextInt();
+    }
+
+    public static void dividirCamisas(int camisetasSorteadas) {
+        int qtdALunos = 0;
+        int numeroSecreto = 0;
+        int chuteDosAlunos = 0;
+        int posicao = 0;
+        for (int i = 0; i < camisetasSorteadas; i++) {
+            qtdALunos = lerInt();
+            numeroSecreto = lerInt();
+
+            for (int j = 0; j < qtdALunos; j++) {
+                chuteDosAlunos = lerInt();
+
+                if (numeroSecreto == chuteDosAlunos || Math.abs(chuteDosAlunos - numeroSecreto) == 1) {
+                    posicao++;
+
+                    break;
+                } else {
+                    posicao++;
+                }
+            }
+
+            System.out.printf("%d\n", posicao);
+            posicao = 0;
+        }
+    }
+}
+
+public static void main(String[] args) {
+    int camisetasSorteadas = lerInt();
+    dividirCamisas(camisetasSorteadas);
+}
